@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shaid Mahamud </title>
+  <title>Shaid Mahamud · CV & Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -735,6 +735,14 @@
           <a class="btn outline" href="https://www.linkedin.com/in/shaid-mahamud-16793b308/" target="_blank">LinkedIn ↗</a>
         </div>
         <div class="contact-info">📞 +880 1787 238957 · shaidmahamud4@gmail.com · github.com/shaid69 · linkedin.com/in/shaid-mahamud-16793b308</div>
+        <div class="reference-box">
+          <div class="ref-label">✦ REFERENCE</div>
+          <p><strong>Dr. Tarem Ahmed, SMIEEE</strong><br>
+          Professor, Dept. of Computer Science and Engineering<br>
+          School of Engineering, Technology and Sciences<br>
+          Independent University, Bangladesh<br>
+          <span class="ref-email">tarem@iub.edu.bd</span></p>
+        </div>
       </div>
     </section>
   </main>
@@ -753,20 +761,23 @@
     else if (!nav.style.display || nav.style.display === 'flex') nav.style.display = 'none';
   });
 
-  // CV Download - Auto download PDF from GitHub
+  // CV Download - Auto download PDF from Google Drive
   document.getElementById('downloadCV')?.addEventListener('click', function() {
-    const pdfUrl = 'https://drive.google.com/file/d/1n6hxkhM2GtfgIozqdNcKlcNQsKDfDYwu/view?usp=sharing';
+    const fileId = '1n6hxkhM2GtfgIozqdNcKlcNQsKDfDYwu';
+    const pdfUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
     
-    // Show loading state
     const btn = this;
     const originalText = btn.innerHTML;
     btn.innerHTML = '<span>⏳</span> Downloading...';
     btn.disabled = true;
     
+    // Try to fetch and download
     fetch(pdfUrl)
       .then(response => {
         if (!response.ok) {
-          throw new Error('PDF not found. Please make sure cv.pdf exists in your repository.');
+          // If direct fetch fails, open in new tab for manual download
+          window.open(`https://drive.google.com/file/d/${fileId}/view?usp=sharing`, '_blank');
+          throw new Error('Direct download not available. Opening Google Drive for manual download.');
         }
         return response.blob();
       })
@@ -778,16 +789,18 @@
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(link.href);
-        
-        // Reset button
         btn.innerHTML = originalText;
         btn.disabled = false;
       })
       .catch(error => {
-        console.error('Download error:', error);
-        alert('Error downloading CV. Please try again or download manually from GitHub.\n\n' + error.message);
+        console.warn('Download fallback:', error.message);
+        // Already opened in new tab, just reset button
         btn.innerHTML = originalText;
         btn.disabled = false;
+        // If the error is not about opening the tab, show alert
+        if (!error.message.includes('Opening Google Drive')) {
+          alert('Unable to download automatically. Opening Google Drive for manual download.');
+        }
       });
   });
 </script>
