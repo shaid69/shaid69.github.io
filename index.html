@@ -753,27 +753,27 @@
     else if (!nav.style.display || nav.style.display === 'flex') nav.style.display = 'none';
   });
 
-  // CV Download - Auto download PDF from Google Drive
+  // CV Download - Auto download PDF from Google Drive with fallback
   document.getElementById('downloadCV')?.addEventListener('click', function() {
     const fileId = '1n6hxkhM2GtfgIozqdNcKlcNQsKDfDYwu';
-    const pdfUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    const directDownloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    const viewUrl = `https://drive.google.com/file/d/${fileId}/view?usp=drive_link`;
     
     const btn = this;
     const originalText = btn.innerHTML;
     btn.innerHTML = '<span>⏳</span> Downloading...';
     btn.disabled = true;
     
-    // Try to fetch and download
-    fetch(pdfUrl)
+    // Try direct download first
+    fetch(directDownloadUrl, { mode: 'cors' })
       .then(response => {
         if (!response.ok) {
-          // If direct fetch fails, open in new tab for manual download
-          window.open(`https://drive.google.com/file/d/${fileId}/view?usp=sharing`, '_blank');
-          throw new Error('Direct download not available. Opening Google Drive for manual download.');
+          throw new Error('Direct download not available');
         }
         return response.blob();
       })
       .then(blob => {
+        // Success - create download link
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = 'Shaid_Mahamud_CV.pdf';
@@ -784,15 +784,13 @@
         btn.innerHTML = originalText;
         btn.disabled = false;
       })
-      .catch(error => {
-        console.warn('Download fallback:', error.message);
-        // Already opened in new tab, just reset button
+      .catch(() => {
+        // Fallback: Open Google Drive view page for manual download
+        window.open(viewUrl, '_blank');
         btn.innerHTML = originalText;
         btn.disabled = false;
-        // If the error is not about opening the tab, show alert
-        if (!error.message.includes('Opening Google Drive')) {
-          alert('Unable to download automatically. Opening Google Drive for manual download.');
-        }
+        // Inform user
+        alert('PDF downloaded manually. Please use the download button on the Google Drive page.');
       });
   });
 </script>
