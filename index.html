@@ -709,9 +709,9 @@
           <h3>📄 Download my full CV</h3>
           <p>Complete resume with experience, education, certifications, and technical skills — in PDF format.</p>
         </div>
-        <a class="cv-download-btn" href="https://github.com/shaid69/shaid69.github.io/blob/main/cv.pdf" target="_blank">
+        <button class="cv-download-btn" id="downloadCV">
           <span>⬇</span> Download CV
-        </a>
+        </button>
       </div>
     </section>
 
@@ -751,6 +751,44 @@
     const nav = document.querySelector('nav');
     if (window.innerWidth > 650) nav.style.display = 'flex';
     else if (!nav.style.display || nav.style.display === 'flex') nav.style.display = 'none';
+  });
+
+  // CV Download - Auto download PDF from GitHub
+  document.getElementById('downloadCV')?.addEventListener('click', function() {
+    const pdfUrl = 'https://github.com/shaid69/shaid69.github.io/raw/main/cv.pdf';
+    
+    // Show loading state
+    const btn = this;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span>⏳</span> Downloading...';
+    btn.disabled = true;
+    
+    fetch(pdfUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('PDF not found. Please make sure cv.pdf exists in your repository.');
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'Shaid_Mahamud_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+        
+        // Reset button
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      })
+      .catch(error => {
+        console.error('Download error:', error);
+        alert('Error downloading CV. Please try again or download manually from GitHub.\n\n' + error.message);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
   });
 </script>
 </body>
