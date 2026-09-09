@@ -452,6 +452,7 @@
       align-items: center;
       gap: 0.7rem;
       border: 1px solid #00ff41;
+      text-decoration: none;
     }
     .cv-download-btn:hover {
       transform: scale(1.04);
@@ -643,9 +644,10 @@
     <section id="experience" class="section dark-section">
       <div class="section-title"><span>04</span><h2>Experience</h2></div>
       <div class="experience">
-        <article><time>2026 — PRESENT</time><div><h3>Credit Review / Risk Operations</h3><strong>TopPay Bangladesh</strong><p>Reviewing loan cases, evaluating income and expenses, checking repayment history and supporting responsible credit decisions.</p></div></article>
-        <article><time>2021 — PRESENT</time><div><h3>Freelance Cybersecurity Specialist</h3><strong>Fiverr · Remote</strong><p>Providing web/API penetration testing, OSINT and email-security services for clients, with a focus on practical assessment and clear reporting.</p></div></article>
-        <article><time>TRAINING</time><div><h3>Arena Web Security — 52 Delta</h3><strong>Student / Internship Track</strong><p>Hands-on training exposure in OSINT, reverse engineering and software analysis, security concepts, research workflows and project-management fundamentals.</p></div></article>
+        <article><time>2021 — PRESENT</time><div><h3>Freelance Cyber Security Specialist</h3><strong>Fiverr</strong><p>Completed <strong>80+</strong> security engagements including vulnerability assessments and penetration tests. Identified <strong>40+</strong> high and critical vulnerabilities across web applications and APIs. Helped clients reduce attack surfaces by <strong>50–60%</strong> through prioritized remediation. Delivered professional reports with CVSS scoring, PoC screenshots, and mitigation steps.</p></div></article>
+        <article><time>2021 — PRESENT</time><div><h3>Bug Bounty Hunter</h3><strong>Multiple Platforms</strong><p>Discovered and responsibly disclosed <strong>70+</strong> valid vulnerabilities in live production systems. Reported XSS, SQL Injection, IDOR, authentication bypass, and server misconfigurations. Achieved <strong>90%+</strong> acceptance rate across multiple bug bounty platforms.</p></div></article>
+        <article><time>2021 — PRESENT</time><div><h3>Penetration Tester</h3><strong>Independent Practice</strong><p>Conducted <strong>25+</strong> full-scope penetration tests simulating real-world attack chains. Performed exploitation, privilege escalation, and post-exploitation analysis. Improved system security by identifying misconfigurations and weak access controls.</p></div></article>
+        <article><time>2020 — PRESENT</time><div><h3>Founder — Cyber Hub</h3><strong>Community Leadership</strong><p>Founded a cybersecurity learning community with <strong>300+</strong> active members. Created <strong>20+</strong> hands-on labs covering penetration testing and OSINT techniques. Mentored <strong>100+</strong> beginners through CTFs, workshops, and guided practice.</p></div></article>
       </div>
     </section>
 
@@ -707,9 +709,9 @@
           <h3>📄 Download my full CV</h3>
           <p>Complete resume with experience, education, certifications, and technical skills — in PDF format.</p>
         </div>
-        <button class="cv-download-btn" id="downloadCV">
+        <a class="cv-download-btn" href="https://github.com/shaid69/shaid69.github.io/blob/main/cv.pdf" target="_blank">
           <span>⬇</span> Download CV
-        </button>
+        </a>
       </div>
     </section>
 
@@ -733,14 +735,6 @@
           <a class="btn outline" href="https://www.linkedin.com/in/shaid-mahamud-16793b308/" target="_blank">LinkedIn ↗</a>
         </div>
         <div class="contact-info">📞 +880 1787 238957 · shaidmahamud4@gmail.com · github.com/shaid69 · linkedin.com/in/shaid-mahamud-16793b308</div>
-        <div class="reference-box">
-          <div class="ref-label">✦ REFERENCE</div>
-          <p><strong>Dr. Tarem Ahmed, SMIEEE</strong><br>
-          Professor, Dept. of Computer Science and Engineering<br>
-          School of Engineering, Technology and Sciences<br>
-          Independent University, Bangladesh<br>
-          <span class="ref-email">tarem@iub.edu.bd</span></p>
-        </div>
       </div>
     </section>
   </main>
@@ -757,89 +751,6 @@
     const nav = document.querySelector('nav');
     if (window.innerWidth > 650) nav.style.display = 'flex';
     else if (!nav.style.display || nav.style.display === 'flex') nav.style.display = 'none';
-  });
-
-  document.getElementById('downloadCV')?.addEventListener('click', function() {
-    const cvContent = `
-SHAID MAHAMUD
-Cyber Security Specialist
-Vulnerability Assessment · Penetration Testing · OSINT · Risk Mitigation
-Dhaka, Bangladesh · +880 1787 238957 · shaidmahamud4@gmail.com
-GitHub: github.com/shaid69 · LinkedIn: linkedin.com/in/shaid-mahamud-16793b308
-
-PROFESSIONAL SUMMARY
-Cyber Security Specialist with 3+ years of practical experience in penetration testing, vulnerability assessment, and OSINT investigations. Successfully identified and reported 150+ security vulnerabilities, including 50+ high/critical issues aligned with OWASP Top 10. Proven track record in bug bounty programs, freelance security consulting, and delivering actionable security reports that reduced client risk exposure by up to 60%.
-
-PROFESSIONAL EXPERIENCE
-Freelance Cyber Security Specialist — Fiverr (2021–Present)
-• Completed 80+ security engagements including vulnerability assessments and penetration tests
-• Identified 40+ high and critical vulnerabilities across web applications and APIs
-• Helped clients reduce attack surfaces by 50-60% through prioritized remediation
-• Delivered professional reports with CVSS scoring, PoC screenshots, and mitigation steps
-
-Bug Bounty Hunter (2021–Present)
-• Discovered and responsibly disclosed 70+ valid vulnerabilities in live production systems
-• Reported XSS, SQL Injection, IDOR, authentication bypass, and server misconfigurations
-• Achieved 90%+ acceptance rate across multiple bug bounty platforms
-
-Penetration Tester — Independent Practice (2021–Present)
-• Conducted 25+ full-scope penetration tests simulating real-world attack chains
-• Performed exploitation, privilege escalation, and post-exploitation analysis
-• Improved system security by identifying misconfigurations and weak access controls
-
-LEADERSHIP & COMMUNITY
-Founder — Cyber Hub (2020–Present)
-• Founded a cybersecurity learning community with 300+ active members
-• Created 20+ hands-on labs covering penetration testing and OSINT techniques
-• Mentored 100+ beginners through CTFs, workshops, and guided practice
-
-EDUCATION
-B.Sc. in Computer Science & Engineering — Independent University, Bangladesh (Ongoing)
-• Relevant Coursework: Computer Networks, Operating Systems, Information Security
-• Academic projects focused on secure application development and automation
-Higher Secondary Certificate (Science) — Santahar Government College (2020)
-Secondary School Certificate (Science) — Naogaon Government High School (2018)
-
-CERTIFICATIONS
-Cyber Security Program — Arena Web Security (2025)
-CCNA v7: Switching, Routing & Wireless Essentials — Cisco (2024)
-CCNA v7: Introduction to Networks — Cisco (2024)
-Advanced Cyber Security: Threats & Governance — Great Learning
-CyberDiplomacy Training — United Nations Office for Disarmament Affairs
-
-TECHNICAL SKILLS
-Security Domains: Vulnerability Assessment, Penetration Testing, Risk Analysis, Incident Response
-Web Security: OWASP Top 10, XSS, SQL Injection, CSRF, IDOR, Authentication Bypass
-Tools: Burp Suite Pro, Nmap, SQLMap, FFUF, Dirsearch, Metasploit, Wireshark
-OSINT: Maltego, Sherlock, Recon-ng, Google Dorking
-Scripting: Python, Bash (Automation & Recon)
-Networking: TCP/IP, DNS, HTTP/S, SSL/TLS
-Platforms: Kali Linux, Parrot OS, Ubuntu, Windows
-
-PROJECTS
-Advanced Bug Bounty Recon Tool — Automated asset discovery and subdomain enumeration framework
-LocalLoop — Secure service marketplace with role-based access control
-SMS Spam Detection — Flask-based ML classifier with 95% accuracy
-SQLMap Automation Script — Automated SQL injection testing and reporting
-
-LANGUAGES
-Bangla (Native) · English (Professional Proficiency) · Hindi (Conversational)
-
-REFERENCES
-Dr. Tarem Ahmed, SMIEEE
-Professor, Dept. of Computer Science and Engineering
-School of Engineering, Technology and Sciences
-Independent University, Bangladesh
-Email: tarem@iub.edu.bd
-    `;
-    const blob = new Blob([cvContent], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'Shaid_Mahamud_CV.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
   });
 </script>
 </body>
