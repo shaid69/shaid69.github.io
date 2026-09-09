@@ -4,8 +4,7 @@ Professional responsive portfolio built with HTML, CSS and JavaScript.
 
 ## Files
 - `index.html`
-- `style.css`
-- `script.js`
+
 
 ## Deploy
 Upload the three files to a GitHub repository and enable GitHub Pages from Settings → Pages.
