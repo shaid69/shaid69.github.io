@@ -45,7 +45,6 @@
       z-index: 1;
       border-radius: 3rem;
     }
-    /* header */
     .header {
       display: flex;
       justify-content: space-between;
@@ -106,8 +105,6 @@
     }
     nav a:hover { color: #aaffaa; text-shadow: 0 0 12px #00ff41; }
     nav a:hover::after { width: 100%; }
-
-    /* hero */
     .hero {
       padding: 1.5rem 0 2rem;
       animation: flickerIn 1.2s ease-out;
@@ -209,8 +206,6 @@
     }
     .meta span { display: flex; align-items: center; gap: 0.4rem; }
     .meta span::before { content: '❯'; color: #00ff41; font-size: 0.7rem; text-shadow: 0 0 6px #00ff41; }
-
-    /* sections */
     .section {
       padding: 4rem 0 2rem;
       border-bottom: 1px solid #1a3a1a;
@@ -302,8 +297,6 @@
     }
     .profile-card strong { font-size: 1.3rem; display: block; color: #b0f0b0; }
     .profile-card p { font-size: 0.9rem; color: #7fc97f; margin-top: 0.3rem; }
-
-    /* expertise */
     .expertise {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -342,8 +335,6 @@
       border: 1px solid #1a4a1a;
       font-family: 'JetBrains Mono', monospace;
     }
-
-    /* projects */
     .project-list {
       display: flex;
       flex-direction: column;
@@ -390,8 +381,6 @@
       font-family: 'JetBrains Mono', monospace;
     }
     .project i { font-style: normal; color: #00ff41; font-size: 1.4rem; opacity: 0.5; text-shadow: 0 0 12px #00ff41; }
-
-    /* experience & education */
     .experience, .education {
       display: flex;
       flex-direction: column;
@@ -426,8 +415,6 @@
       font-family: 'JetBrains Mono', monospace;
       margin: 0.15rem 0.15rem 0 0;
     }
-
-    /* CV section */
     .cv-box {
       background: rgba(0, 20, 0, 0.25);
       border-radius: 2.5rem;
@@ -471,8 +458,6 @@
       box-shadow: 0 0 60px rgba(0, 255, 65, 0.4);
       background: #66ff88;
     }
-
-    /* services */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -501,8 +486,6 @@
     }
     .service-grid h3 { margin: 0.6rem 0 0.3rem; font-size: 1.1rem; color: #c8f0c8; }
     .service-grid p { color: #7fc97f; font-size: 0.9rem; }
-
-    /* contact */
     .contact { padding: 4rem 0 2rem; position: relative; z-index: 2; }
     .contact-inner {
       background: rgba(0, 20, 0, 0.2);
@@ -533,6 +516,25 @@
       font-family: 'JetBrains Mono', monospace;
       text-shadow: 0 0 4px #002200;
     }
+    .reference-box {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #1a4a1a;
+      border-radius: 2rem;
+      background: rgba(0,20,0,0.2);
+    }
+    .reference-box .ref-label {
+      color: #4f8a4f;
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .reference-box p {
+      color: #8fc98f;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+    .reference-box strong { color: #d0f0d0; }
+    .reference-box .ref-email { color: #4f8a4f; }
     footer {
       margin-top: 3rem;
       display: flex;
@@ -546,8 +548,6 @@
       z-index: 2;
     }
     .muted { color: #4f7a4f; margin-bottom: 0.5rem; }
-
-    /* responsive */
     @media (max-width: 900px) {
       .two-col { grid-template-columns: 1fr; }
       .expertise { grid-template-columns: 1fr 1fr; }
@@ -587,19 +587,17 @@
     </nav>
   </header>
   <main>
-    <!-- hero -->
     <section id="home" class="hero">
       <div class="label">⧩ CYBERSEC · ETHICAL HACKER</div>
       <h1>Security is not just<br><em>defense.</em> It is understanding<br>how systems fail.</h1>
-      <p class="intro">I’m Shaid Mahamud — a cybersecurity professional focused on penetration testing, web and API security, OSINT, network security and practical security research.</p>
+      <p class="intro">I'm Shaid Mahamud — a cybersecurity professional focused on penetration testing, web and API security, OSINT, network security and practical security research.</p>
       <div class="buttons">
-        <a class="btn solid" href="#contact">Let’s Work Together</a>
+        <a class="btn solid" href="#contact">Let's Work Together</a>
         <a class="btn outline" href="https://github.com/shaid69" target="_blank">View GitHub ↗</a>
       </div>
       <div class="meta"><span>Dhaka, Bangladesh</span><span>Independent University, Bangladesh</span><span>Open to cybersecurity opportunities</span></div>
     </section>
 
-    <!-- about -->
     <section id="about" class="section">
       <div class="section-title"><span>01</span><h2>Professional Profile</h2></div>
       <div class="two-col">
@@ -617,7 +615,6 @@
       </div>
     </section>
 
-    <!-- expertise -->
     <section id="expertise" class="section dark-section">
       <div class="section-title"><span>02</span><h2>Core Expertise</h2></div>
       <div class="expertise">
@@ -630,7 +627,6 @@
       </div>
     </section>
 
-    <!-- projects -->
     <section id="projects" class="section">
       <div class="section-title"><span>03</span><h2>Selected Work</h2></div>
       <p class="muted">// a selection from my GitHub arsenal</p>
@@ -644,7 +640,6 @@
       </div>
     </section>
 
-    <!-- experience -->
     <section id="experience" class="section dark-section">
       <div class="section-title"><span>04</span><h2>Experience</h2></div>
       <div class="experience">
@@ -654,7 +649,6 @@
       </div>
     </section>
 
-    <!-- education -->
     <section id="education" class="section">
       <div class="section-title"><span>05</span><h2>Education & Certifications</h2></div>
       <div class="education">
@@ -669,7 +663,6 @@
       </div>
     </section>
 
-    <!-- technical skills -->
     <section class="section dark-section">
       <div class="section-title"><span>06</span><h2>Technical Skills</h2></div>
       <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; margin-top: 0.5rem;">
@@ -707,7 +700,6 @@
       </div>
     </section>
 
-    <!-- CV SECTION with download -->
     <section id="cv" class="section">
       <div class="section-title"><span>07</span><h2>Curriculum Vitae</h2></div>
       <div class="cv-box">
@@ -721,7 +713,6 @@
       </div>
     </section>
 
-    <!-- services -->
     <section class="section services">
       <div class="section-title"><span>08</span><h2>Professional Services</h2></div>
       <div class="service-grid">
@@ -732,21 +723,23 @@
       </div>
     </section>
 
-    <!-- contact -->
     <section id="contact" class="contact">
       <div class="contact-inner">
         <div class="label">⧩ GET IN TOUCH</div>
-        <h2>Let’s build something<br><em>secure.</em></h2>
+        <h2>Let's build something<br><em>secure.</em></h2>
         <p>For cybersecurity opportunities, freelance security work, collaborations or technical projects, feel free to reach out.</p>
         <div class="buttons" style="justify-content:center;">
           <a class="btn solid" href="mailto:shiadmahamud92@gmail.com">Email Me</a>
           <a class="btn outline" href="https://www.linkedin.com/in/shaid-mahamud-16793b308/" target="_blank">LinkedIn ↗</a>
         </div>
         <div class="contact-info">📞 +880 1787 238957 · shiadmahamud92@gmail.com · github.com/shaid69 · linkedin.com/in/shaid-mahamud-16793b308</div>
-        <!-- Reference -->
-        <div style="margin-top: 1.5rem; padding: 0.8rem 1.2rem; border: 1px solid #1a4a1a; border-radius: 2rem; background: rgba(0,20,0,0.2);">
-         
-          </p>
+        <div class="reference-box">
+          <div class="ref-label">✦ REFERENCE</div>
+          <p><strong>Dr. Tarem Ahmed, SMIEEE</strong><br>
+          Professor, Dept. of Computer Science and Engineering<br>
+          School of Engineering, Technology and Sciences<br>
+          Independent University, Bangladesh<br>
+          <span class="ref-email">tarem@iub.edu.bd</span></p>
         </div>
       </div>
     </section>
@@ -755,7 +748,6 @@
 </div>
 
 <script>
-  // mobile menu toggle
   document.querySelector('.menu')?.addEventListener('click', function() {
     const nav = document.querySelector('nav');
     if (nav.style.display === 'flex') nav.style.display = 'none';
@@ -767,7 +759,6 @@
     else if (!nav.style.display || nav.style.display === 'flex') nav.style.display = 'none';
   });
 
-  // CV download — generates a text-based CV with full details + reference
   document.getElementById('downloadCV')?.addEventListener('click', function() {
     const cvContent = `
 SHAID MAHAMUD
